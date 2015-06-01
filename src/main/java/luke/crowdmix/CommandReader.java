@@ -4,20 +4,25 @@ import luke.crowdmix.user.User;
 import luke.crowdmix.user.UserRepository;
 
 import java.io.PrintStream;
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.function.Supplier;
 
 import static luke.crowdmix.user.User.Name.username;
+import static luke.crowdmix.util.DateUtil.describeDurationBetween;
 
 public class CommandReader {
     public static final String POST_COMMAND = "-> ";
 
     private final UserRepository userRepository;
     private final PrintStream output;
+    private final Supplier<LocalDateTime> localDateTimeSupplier;
 
-    public CommandReader(UserRepository userRepository, PrintStream output) {
+    public CommandReader(UserRepository userRepository, PrintStream output, Supplier<LocalDateTime> localDateTimeSupplier) {
         this.userRepository = userRepository;
         this.output = output;
+        this.localDateTimeSupplier = localDateTimeSupplier;
     }
 
     public void consume(Scanner scanner) {
@@ -42,7 +47,7 @@ public class CommandReader {
             if (isAPost()) {
                 userRepository.get(username).publish(parseMessageToPost());
             } else if (!restOfCommand.isPresent()) {
-                userRepository.get(username).messages().forEach((msg) -> output.println(msg.toString()));
+                userRepository.get(username).messages().forEach((msg) -> output.println(msg.message() + " (" + describeDurationBetween(msg.dateCreated(), localDateTimeSupplier.get()) + " ago)"));
             } else {
                 System.out.println("unknown command: " + input);
             }

@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.time.temporal.Temporal;
 
 public class DateUtil {
-    public static String describeDuration(Temporal start, Temporal end) {
+    public static String describeDurationBetween(Temporal start, Temporal end) {
         Duration duration = Duration.between(start, end);
         if (duration.toDays() > 1) {
             return duration.toDays() + " days";

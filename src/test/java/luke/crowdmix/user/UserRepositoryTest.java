@@ -1,8 +1,5 @@
 package luke.crowdmix.user;
 
-import luke.crowdmix.user.User;
-import luke.crowdmix.user.UserFactory;
-import luke.crowdmix.user.UserRepository;
 import org.junit.Test;
 
 import static luke.crowdmix.user.User.Name.username;
