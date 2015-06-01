@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d5a933f-7e1e-4a15-9ecd-4bcc3cd173ff" name="Default" comment="remove workspace.xml">
+    <list default="true" id="2d5a933f-7e1e-4a15-9ecd-4bcc3cd173ff" name="Default" comment="">
       <change type="DELETED" beforePath="C:\Users\Luke\Documents\GitHub\social-music-test\.idea\.name" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Luke\Documents\GitHub\social-music-test\.idea\compiler.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Luke\Documents\GitHub\social-music-test\.idea\copyright\profiles_settings.xml" afterPath="" />
@@ -15,8 +15,6 @@
       <change type="DELETED" beforePath="C:\Users\Luke\Documents\GitHub\social-music-test\.idea\uiDesigner.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Luke\Documents\GitHub\social-music-test\.idea\vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Luke\Documents\GitHub\social-music-test\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Luke\Documents\GitHub\social-music-test\crowdmix.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="crowdmix.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -251,20 +249,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="social-music-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crowdmix" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="social-music-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -824,7 +808,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433194946024</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="remove .idea &amp; .iml files, updated .gitignore">
+      <created>1433195055185</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1433195055185</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -901,7 +891,8 @@
     <MESSAGE value="remove workspace.xml" />
     <MESSAGE value="fulfilled rest of acceptance criteria, created main method" />
     <MESSAGE value="added maven compiler &amp; jar plugins" />
-    <option name="LAST_COMMIT_MESSAGE" value="added maven compiler &amp; jar plugins" />
+    <MESSAGE value="remove .idea &amp; .iml files, updated .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove .idea &amp; .iml files, updated .gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
