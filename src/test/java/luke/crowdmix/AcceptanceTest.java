@@ -30,7 +30,7 @@ public class AcceptanceTest {
     private final CommandReader commandReader = new CommandReader(userRepository, out, () -> CURRENT_TIME);
 
     @Test
-    public void userCanPublishMessagesToAPersonalTimelineAndViewThem() {
+    public void allAcceptanceCriteria() {
         readInput("Alice -> I love the weather today", "Bob -> Damn! We lost!", "Bob -> Good game though.");
         then(out).should(never()).println(any(String.class));
 
