@@ -1,21 +1,26 @@
 package luke.crowdmix.message;
 
-import luke.crowdmix.util.DateUtil;
+import luke.crowdmix.user.User;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 public class Message {
     private final String message;
     private final LocalDateTime dateCreated;
+    private final User.Name userName;
 
-    public Message(String message, LocalDateTime dateCreated) {
+    public Message(String message, LocalDateTime dateCreated, User.Name userName) {
         this.message = message;
         this.dateCreated = dateCreated;
+        this.userName = userName;
     }
 
     public String toString() {
-        return "message="  + message + ",dateCreated=" + dateCreated;
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SIMPLE_STYLE);
     }
 
     public String message() {
@@ -27,16 +32,16 @@ public class Message {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Message message1 = (Message) o;
-        return Objects.equals(message, message1.message) &&
-                Objects.equals(dateCreated, message1.dateCreated);
+    public boolean equals(Object tother) {
+        return EqualsBuilder.reflectionEquals(this, tother);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(message, dateCreated);
+        return HashCodeBuilder.reflectionHashCode(this);
+    }
+
+    public User.Name userName() {
+        return userName;
     }
 }

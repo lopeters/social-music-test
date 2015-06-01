@@ -17,12 +17,12 @@ public class MessageRepositoryTest {
     private final MessageRepository underTest = new MessageRepository(() -> CREATION_DATE_TIME);
 
     @Test
-    public void canGetMessagesAfterSavingThem() {
+    public void canGetMessagesAfterSavingThemOrderedByNewest() {
         underTest.save(USER, "message");
         underTest.save(ANOTHER_USER, "another message");
         underTest.save(ANOTHER_USER, "yet another message");
 
-        assertThat(underTest.getAll(USER), contains(new Message("message", CREATION_DATE_TIME)));
-        assertThat(underTest.getAll(ANOTHER_USER), contains(new Message("another message", CREATION_DATE_TIME), new Message("yet another message", CREATION_DATE_TIME)));
+        assertThat(underTest.getAll(USER), contains(new Message("message", CREATION_DATE_TIME, USER)));
+        assertThat(underTest.getAll(ANOTHER_USER), contains(new Message("yet another message", CREATION_DATE_TIME, ANOTHER_USER), new Message("another message", CREATION_DATE_TIME, ANOTHER_USER)));
     }
 }
